@@ -3,12 +3,16 @@
 
 #include "Prop.h"
 
+#include "Engine/StaticMeshSocket.h"
+
 // Sets default values
 AProp::AProp()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	MeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MESH COMP"));
+	RootComponent = MeshComp;
 }
 
 // Called when the game starts or when spawned
